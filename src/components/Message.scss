@@ -1,0 +1,63 @@
+@import "../styles/variables";
+
+.message-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.message {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: $margin-2;
+  align-items: center;
+  max-width: 80%;
+
+  &__image {
+    height: 50px;
+    width: 50px;
+    margin-right: $margin-2;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  &__content {
+    text-align: left;
+    word-wrap: break-word;
+    padding: $margin-1 $margin-2;
+    box-shadow: 0 0 32px rgb(0 0 0 / 15%),
+    0 16px 16px -16px rgb(0 0 0 / 10%);
+
+    &__user {
+      font-size: 0.8rem;
+    }
+
+    &__text {
+      margin-bottom: $margin-1;
+    }
+
+    &__date {
+      font-size: 0.8rem;
+      text-align: left;
+    }
+  }
+
+  &--incoming {
+    align-self: start;
+
+    .message__content {
+      background-color: $light-grey-1;
+      color: $dark-grey;
+      border-radius: $margin-2 $margin-2 $margin-2 0;
+    }
+  }
+
+  &--outgoing {
+    align-self: end;
+
+    .message__content {
+      background-color: $dark-grey;
+      color: $light-grey-1;
+      border-radius: $margin-2 $margin-2 0 $margin-2;
+    }
+  }
+}
